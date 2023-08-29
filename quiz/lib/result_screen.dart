@@ -10,14 +10,14 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var questionsAnsweredCorrect = 0;
+    // var questionsAnsweredCorrect = 0;
     // selectedAnswers.map((el){
     //   if(el.isCorrect){
     //     questionsAnsweredCorrect++;
     //   }
-    // });
-    questionsAnsweredCorrect =
-        selectedAnswers.where((el) => el.isCorrect).length;
+    //  });
+    // questionsAnsweredCorrect =
+    //     selectedAnswers.where((el) => el.isCorrect).length;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
