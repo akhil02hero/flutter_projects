@@ -4,7 +4,7 @@ const questions = [
   // QuizQuestion(
   //     "What is your name ?", ["akhil", "akshay", "aruna", "anjaiah"], "akhil"),
   QuizQuestion("what is the capital of belarus ?",
-      ["new delhi", "Hyderabad", "minsk", "kyiv"], "minsk"),
+      ["New delhi", "Hyderabad", "Minsk", "Kyiv"], "Minsk"),
   QuizQuestion(
       "Which company is set to offer multipurpose drones for strategic operations of the Indian Army?",
       [

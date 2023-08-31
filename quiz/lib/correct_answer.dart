@@ -13,6 +13,7 @@ class CorrectAnswer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SizedBox(
       width: 360,
       child: Row(
@@ -35,35 +36,48 @@ class CorrectAnswer extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  question,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
+                Container(
+                  width: 360,
+                  padding: const EdgeInsets.fromLTRB(15,0,0,0),
+                  child: Text(
+                    '${id + 1}.) $question',
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
-                      fontWeight: FontWeight.w300),
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 3,
                 ),
-                Text(
-                  correctAnswer,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      color: Color.fromARGB(255, 28, 254, 145),
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300),
+                SizedBox(
+                  width: 300,
+                  child: Text(
+                    'Correct Answer : $correctAnswer',
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 28, 254, 145),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300),
+                  ),
                 ),
                 const SizedBox(
                   height: 3,
                 ),
-                Text(
-                  answer,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: isCorrect ?Color.fromARGB(255, 28, 254, 145): Colors.amber,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300),
+                SizedBox(
+                  width:300,
+                  child: Text(
+                    'Selected Answer : $answer',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        color: isCorrect
+                            ? const Color.fromARGB(255, 28, 254, 145)
+                            : Colors.amber,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

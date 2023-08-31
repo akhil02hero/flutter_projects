@@ -32,6 +32,13 @@ class _QuizSate extends State<Quiz> {
     });
   }
 
+  void returnToQuestionScreen(){
+    setState(() {
+      activeScreen = QuestionScreen(chooseAnswers);
+      selectedAnswers=[];
+    });
+  }
+
   void returnHomeScreen() {
     setState(() {
       activeScreen=StartScreen(switchScreen);
@@ -43,7 +50,7 @@ class _QuizSate extends State<Quiz> {
     selectedAnswers.add(AnsweredDetail(id,answer, correctAnswer,question,crctAnswer));
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultScreen(returnHomeScreen,selectedAnswers);
+        activeScreen = ResultScreen(returnHomeScreen,selectedAnswers,returnToQuestionScreen);
       });
     }
   }

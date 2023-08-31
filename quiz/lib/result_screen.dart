@@ -3,21 +3,24 @@ import 'package:quiz/correct_answer.dart';
 import 'package:quiz/models/answered_details.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen(this.returnHomeScreen, this.selectedAnswers, {Key? key})
+  const ResultScreen(
+      this.returnHomeScreen, this.selectedAnswers, this.returnToQuestionScreen,
+      {Key? key})
       : super(key: key);
   final void Function() returnHomeScreen;
+  final void Function() returnToQuestionScreen;
   final List<AnsweredDetail> selectedAnswers;
 
   @override
   Widget build(BuildContext context) {
-    // var questionsAnsweredCorrect = 0;
+    var questionsAnsweredCorrect = 0;
     // selectedAnswers.map((el){
     //   if(el.isCorrect){
     //     questionsAnsweredCorrect++;
     //   }
     //  });
-    // questionsAnsweredCorrect =
-    //     selectedAnswers.where((el) => el.isCorrect).length;
+    questionsAnsweredCorrect =
+        selectedAnswers.where((el) => el.isCorrect).length;
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,9 +50,17 @@ class ResultScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 30,
-          ),
+          if (questionsAnsweredCorrect < 4)
+            OutlinedButton.icon(
+                onPressed: returnToQuestionScreen,
+                icon: const Icon(
+                  Icons.loop,
+                  color: Colors.white,
+                ),
+                label: const Text(
+                  "Retry",
+                  style: TextStyle(color: Colors.white),
+                )),
           OutlinedButton.icon(
               onPressed: returnHomeScreen,
               icon: const Icon(
