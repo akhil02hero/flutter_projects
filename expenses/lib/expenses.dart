@@ -1,3 +1,4 @@
+import 'package:expenses/expense/expenses_list.dart';
 import 'package:expenses/models/expense.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  final List<Expense> _expenses = [
+  final List<Expense> expenses = [
     Expense(
       "Shawarma",
       200,
@@ -32,11 +33,11 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: <Widget>[
-          Text("Expenses"),
-          Text("List of Expenses"),
+          const Text("Expenses"),
+          ExpensesList(expenses),
         ],
       ),
     );

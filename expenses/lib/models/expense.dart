@@ -7,7 +7,7 @@ enum Category {
   travel,
   home,
   learning,
-  extras,
+  medical,
 }
 
 class Expense {
